@@ -1,0 +1,182 @@
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+        body {
+            font-family: "Roboto", sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-weight: 400;
+            font-style: normal;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        #start {
+            position: fixed;
+            height: 80vh;
+            width: 100vw;
+            background-color: transparent;
+            z-index: 10;
+            top: 0;
+            background-image: linear-gradient(180deg, black 0%, transparent 101%);
+            font-size: 170%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            backdrop-filter: blur(17px);
+            transition: height 0.4s, opacity 0.4s, all 0.3s;
+        }
+        .choices {
+            position: fixed;
+            background: #007672;
+            width: 97%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px 20px;
+            box-shadow: 0 0 10px 0 black;
+            transition: background 0.3s;
+        }
+        #player-choice {
+            bottom: 7px;
+        }
+        .choices button {
+            padding: 10px 20px;
+            margin: 28px;
+            font-size: 16px;
+            height: 71px;
+            width: 71px;
+            background: #cbffe8;
+            border: none;
+            font-size: 222%;
+            border-radius: 101px;
+            transition: transform 0.3s;
+            user-select: none;
+        }
+        #player-choice button:active {
+            transform: scale(0.9);
+        }
+        .result, .score {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+      .score {
+        z-index: 11;
+      }
+        #player-score {
+            position: fixed;
+            bottom: 120px;
+            left: 20px;
+        }
+        #computer-score {
+            position: fixed;
+            top: 65px;
+            right: 20px;
+        }
+        .display-choices {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+        }
+        .floating-ghost {
+            position: absolute;
+            font-size: 48px;
+            z-index: 10;
+            transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .pulse {
+            animation: pulse 0.3s ease 0s infinite;
+        }
+        #progress {
+            top: 7px;
+            background: #cbffe8;
+            display: flex;
+            justify-content: flex-start;
+            overflow: hidden;
+            height: 54px;
+            border-radius: 102px;
+            align-items: center;
+        }
+        #progressbar {
+            height: 100%;
+            background: purple;
+            width: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 100%;
+            border-radius: 100px;
+            transition: width 0.3s;
+            min-width: 54px;
+        }
+        #computerprogress {
+            position: absolute;
+            right: 10px;
+        }
+        .ghost {
+            user-select: none;
+            pointer-events: none;
+        }
+        #computerprogress, #playerprogress {
+            transition: font-size 0.4s;
+        }
+        .win {
+            background-color: #4db300;
+        }
+        .lose {
+            background-color: #a81a1a;
+        }
+        .tie {
+            background-color: #007672;
+        }
+        .reset {
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #397e18;
+            border-radius: 50%;
+            font-size: 3vh;
+            bottom: 160px;
+            left: 20px;
+            color: white;
+            opacity: 60%;
+            transition: opacity 0.3s;
+            user-select: none;
+            box-shadow: none;
+            z-index: 15;
+            transition: box-shadow 0.2s, translate 0.2s, scale 0.2s, opacity 0.2s;
+        }
+        .reset:hover {
+            box-shadow: 5px 4px 2px 0 #000000cc;
+            opacity: 1;
+        }
+        .reset:active {
+            box-shadow: 0px 0px 2px 0 #000000cc;
+            translate: 5px 4px;
+            scale: 0.95;
+        }
